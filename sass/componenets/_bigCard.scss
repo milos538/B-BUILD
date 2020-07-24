@@ -1,0 +1,74 @@
+.bigCard{
+    width:20%;
+    height: 70%;
+    display: inline-block;
+    text-align: center;
+    position:relative;
+    background-color:$white_color;
+    box-shadow: 0 1.5rem 4rem rgba($black_color,0.15);
+    @media only screen and (max-width: 100em){
+        width:25%;
+    }
+    @include respond(tab-port) {
+        width:30%;
+    }
+    @include respond(phone) {
+        display:block;
+        margin: 3rem auto;
+        width:80%;
+    }
+    .cardPicture{
+        width: 100%;
+        height: 80%;
+        position:relative;
+        clip-path: polygon(0 0, 100% 0, 100% 81%, 0 90%);
+        transition: all 1s;
+    }
+    .cpic1{
+        @include backgroundPicture($darkOverlayGradient,"../img/rent/2.jpg");
+        &:hover:after{
+            @include hoverForPrice(200);
+        }
+    }
+    .cpic2{
+        @include backgroundPicture($darkOverlayGradient,"../img/rent/1.jpg");
+        &:hover:after{
+            @include hoverForPrice(150);
+        }
+    }
+    .cpic3{
+        @include backgroundPicture($darkOverlayGradient,"../img/rent/3.jpg");
+        &:hover:after{
+            @include hoverForPrice(250);
+        }
+    }
+    .cardTitle{
+        position: absolute;
+        top:0;
+        right:0;
+        color:$white_color;
+        padding:1.3rem;
+        width: 10rem;
+        font-size: 2rem;
+        background-color: $gold_color;
+    }
+    .cardDetails{
+        width: 100%;
+        height: 20%;
+        background-color: $white_color;
+        margin-top:-10%;
+        ul{
+            text-align: center;
+            list-style-type: none;
+            li{
+                color:$text_light_grey;
+                font-size:2rem;
+                padding:1rem;
+                &:not(:last-child) {
+                    border-bottom: 1px solid #eee;
+                }
+            }
+
+        }
+    }
+}

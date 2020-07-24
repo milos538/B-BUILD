@@ -1,0 +1,47 @@
+.smallCard{
+    width:20%;
+    background-color: rgba($white_color,.8);
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(#000000,.15);
+    margin:2rem 2rem;
+    padding: 5rem 0rem;
+    display: inline-block;
+    transition: transform .3s;
+    @include respond(tab-land) {
+        width:30%;
+        margin:1rem;
+    }
+    @include respond(phone) {
+        display:block;
+        margin: 0 auto;
+        margin-top:1rem;
+        width:50%;
+    }
+    @include respond(small-phone) {
+        width:60%;
+    }
+    &:hover{
+        transform: translateY(-1.5rem) scale(1.03);
+    }
+    .card_picture{
+        img{
+            width:20%;
+            @include respond(tab-port) {
+                width:15%;
+            }
+        }
+    }
+    .card_name{
+        margin: 1.5rem;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size:1.5rem;
+        color: $black_color;
+    }
+    .card_text{
+        color: #555555;
+        width:90%;
+        margin:0 auto;
+        font-size: 1.2rem;
+    }
+}

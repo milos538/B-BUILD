@@ -1,0 +1,64 @@
+@mixin backgroundSettings{
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover;
+}
+@mixin backgroundPicture($boja,$slika){
+    background-image: $boja,url($slika);
+    @include backgroundSettings;
+}
+@mixin heading{
+    width:100%;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 500;
+    background-image: $overlayGradientBackward;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color:transparent;
+    letter-spacing: 0.2rem;
+}
+@mixin hoverForPrice($price){
+        content:"FROM " + $price + "$";
+        padding-top:35%;
+        text-align: center;
+        font-size: 5rem;
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom: 0;
+        background-color: $gold_color;
+        color:white;
+}
+
+/*
+MEDIA QUERY MIXIN
+
+$breakpoints:
+- small-phone
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+*/
+@mixin respond($breakpoint) {
+    @if $breakpoint == small-phone {
+        @media only screen and (max-width:25em) { @content }; //400px
+    }
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 37.5em) { @content };//600px
+    }
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 56.25em) { @content };//900px
+    }
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 75em) { @content }; //1200px
+    }
+    @if $breakpoint == big-desktop {
+        @media only screen and (min-width: 112.5em) { @content };//1800px
+    }
+}

@@ -1,0 +1,37 @@
+#services{
+    margin-top:8rem;
+    padding: 15rem 0;
+    background-image: $overlayGradientBackward, url(../img/building.jpg);
+    @include backgroundSettings;
+    transform: skewY(-7deg);
+    & > * {
+        transform:skewY(+7deg);
+    }
+    .heading{
+        width:100%;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 5rem;
+        font-weight: 500;
+        color: $white_color;
+        letter-spacing: 0.52rem;
+        margin-bottom: 3rem;
+        @include respond(tab-port) {
+            font-size: 3rem;
+        }
+        @include respond(phone) {
+            font-size: 4rem;
+        }
+        @include respond(small-phone) {
+            font-size:2rem;
+        }
+    }
+    .card-1-of-3{
+        width:80%;
+        margin:0 auto;
+        text-align: center;
+        @include respond(tab-port) {
+            width:95%;
+        }
+    }
+}
